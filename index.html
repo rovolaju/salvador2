@@ -1,0 +1,113 @@
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="css/uikit.css" />
+        <link rel="stylesheet" href="css/xeditable.css" />
+        <script src="js/jquery-2.2.0-jquery.min.js"></script>
+        <script src="js/uikit.min.js"></script>
+        <script src="js/angularjs-1.3.15-angular.js"></script>
+        <script src="js/angularjs-1.3.15-angular-route.js"></script>
+        <script src="js/xeditable.js"></script>
+        <script src="js/app.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcSlIhqSmgkc4vsxjRs1ytkvntzesaQVk&libraries=places">
+        </script>
+        <script src="js/ui-bootstrap-tpls.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="contenedor uk-container uk-panel uk-panel-box uk-panel-box-secondary">
+            <div>
+                <i class="uk-float-left uk-icon-medium uk-icon-bars uk-margin-top" data-uk-offcanvas="{target:'#navegacion'}"></i>
+            </div>
+            <div>
+                <a href="#/agenda"><i class="uk-float-right uk-icon-medium uk-icon-plus uk-margin-top"></i></a>
+            </div>
+            <h3 class="uk-text-center uk-margin-bottom"><img src="images/logo_salvador.png" width="25%"/></h3>
+            
+        </div>
+        
+        <div class="uk-grid uk-panel uk-panel-box uk-panel-box-primary">
+            <div class="uk-width-1-5">
+                <a href="#/inicio"><button class="uk-button uk-button-danger uk-icon-large uk-icon-home" type="button"></button></a>
+            </div>
+            <div class="uk-width-1-5">
+                <a href="#/citas"><button class="uk-button uk-button-danger uk-icon-large uk-icon-calendar" type="button"></button></a>
+            </div>
+            <div class="uk-width-1-5">
+                <a href="#/sucursales"><button class="uk-button uk-button-danger uk-icon-large uk-icon-map-marker" type="button"></button></a>
+            </div>
+            <div class="uk-width-1-5">
+                <a href="#/promociones"><button class="uk-button uk-button-danger uk-icon-large uk-icon-tag" type="button"><i></i></button></a>
+            </div>
+            <div class="uk-width-1-5">
+                <a href="#/acerca"><button class="uk-button uk-button-danger uk-icon-large uk-icon-facebook" type="button"><i></i></button></a>
+            </div>
+        </div>
+        
+        <div id="navegacion" class="uk-offcanvas">
+            <div class="uk-nav uk-offcanvas-bar">
+                <ul class="uk-margin-top uk-nav-side uk-nav-offcanvas" data-uk-nav>
+                    <li><a href="#/login"><i class="uk-margin-top uk-icon-medium uk-icon-user"></i> Mi Perfil</a></li>
+                    <li><a href="#/contacto"><i class="uk-margin-top uk-icon-medium uk-icon-send"></i> Contacto</a></li>
+                    <li class="uk-margin-top uk-nav-divider"></li>
+                    <li class="uk-text-center uk-margin-top"><a href="#/acerca">About</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div ng-view>
+        </div>
+        
+        <script type="text/javascript">
+               /* function initialize() {
+                    var loc = {};
+                    var geocoder = new google.maps.Geocoder();
+                    if(google.loader.ClientLocation) {
+                        loc.lat = google.loader.ClientLocation.latitude;
+                        loc.lng = google.loader.ClientLocation.longitude;
+                    }
+                    return loc;
+
+
+
+              var latlng = new google.maps.LatLng(-33.8665, 151.1956);
+
+              var map = new google.maps.Map(document.getElementById('map'), {
+                center: latlng,
+                zoom: 15,
+                scrollwheel: false
+              });
+
+              // Specify location, radius and place types for your Places API search.
+              var request = {
+                location: latlng,
+                radius: '500',
+                types: ['store']
+              };
+
+              // Create the PlaceService and send the request.
+              // Handle the callback with an anonymous function.
+              var service = new google.maps.places.PlacesService(map);
+              service.nearbySearch(request, function(results, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                  for (var i = 0; i < results.length; i++) {
+                    var place = results[i];
+                    // If the request succeeds, draw the place location on
+                    // the map as a marker, and register an event to handle a
+                    // click on the marker.
+                    var marker = new google.maps.Marker({
+                      map: map,
+                      position: place.geometry.location
+                    });
+                  }
+                }
+              });
+
+            // Run the initialize function when the window has finished loading.
+            google.maps.event.addDomListener(window, 'load', initialize);}
+            }*/
+        </script>
+    </body>
+</html>

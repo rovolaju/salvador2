@@ -1,0 +1,50 @@
+<div class="uk-block uk-margin-left uk-margin-right">
+    <div ng-controller="UsuarioCtrl">
+        <p><span class="uk-text-primary">Usuario: </span>
+          <a href="#" editable-text="user.name">{{ user.name || 'empty' }}</a>
+        </p>
+        </div>
+    <hr>
+    <div ng-controller="SeleccionarSucursalCtrl">
+        <p><span class="uk-text-primary">Salón: </span>
+      <a href="#" editable-select="user.group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+        {{ user.groupName || 'not set' }}
+      </a>
+        </p>
+        <p class="uk-text-muted">Ubicación de Franquicia</p>
+    </div>
+    <hr>
+    <div ng-controller="FechaCtrl">
+        <p><span class="uk-text-primary">Fecha: </span>
+      <a href="#" editable-bsdate="user.dob" e-datepicker-popup="dd-MMMM-yyyy">
+        {{ (user.dob | date:"dd/MM/yyyy") || 'empty' }}
+      </a>
+      </p>
+    </div>
+    <hr>
+    <div ng-controller="HoraCtrl">
+        <p><span class="uk-text-primary">Hora: </span>
+      <a href="#" editable-bstime="user.time" e-show-meridian="false" e-minute-step="10">
+        {{ (user.time | date:"HH:mm") || 'empty' }}
+      </a>
+      </p>
+    </div>
+    <hr>
+    <div ng-controller="SeleccionarServicioCtrl">
+        <p><span class="uk-text-primary">Servicio: </span>
+      <a href="#" editable-select="user.group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+        {{ user.groupName || 'not set' }}
+      </a>
+        </p>
+    </div>
+    <hr>
+    <div ng-controller="SeleccionarEstilistaCtrl">
+        <p><span class="uk-text-primary">Estilista: </span>
+      <a href="#" editable-select="user.group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+        {{ user.groupName || 'not set' }}
+      </a>
+        </p>
+    </div>
+    <hr>
+    <button class="uk-button uk-button-primary uk-align-center">Guardar</button>
+</div>
